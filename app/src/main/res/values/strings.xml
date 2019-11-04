@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SafeHome</string>
+
+    <!-- Hints -->
+    <string name="hint_email">Correo electrónico</string>
+
+    <!-- CheckBox -->
+    <string name="do_not_sign_out">No cerrar sesión</string>
+
+    <!-- Buttons -->
+    <string name="log_in">Iniciar Sesión</string>
+
+    <!-- Content description -->
+    <string name="logo_content_description">logo</string>
+
+
+</resources>
