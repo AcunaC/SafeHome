@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.yupanquisoftware.safehome.R
 import com.yupanquisoftware.safehome.databinding.ActivityLoginBinding
 import com.yupanquisoftware.safehome.util.LoginEnum
+import com.yupanquisoftware.safehome.util.openActivity
 import com.yupanquisoftware.safehome.util.showShortToast
 import com.yupanquisoftware.safehome.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
@@ -38,10 +39,12 @@ class LoginActivity : AppCompatActivity() {
         viewmodel.navAction.observe(this, Observer {
             when (it) {
                 LoginEnum.FIRST_TIME -> {
-                    showShortToast(message = "Primera vez")
+                    openActivity(IntroActivity::class.java, true)
                 }
                 LoginEnum.NOT_FIRST_TIME -> {
-                    showShortToast(message = "No es la primera vez")
+                    openActivity(ValidateCode::class.java, true){
+                        putString("message","Para iniciar sesión ingrese su PIN de seguridad.")
+                    }
                 }
             }
         })
