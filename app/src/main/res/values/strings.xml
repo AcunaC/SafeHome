@@ -13,5 +13,8 @@
     <!-- Content description -->
     <string name="logo_content_description">logo</string>
 
+    <!-- Messages -->
+    <string name="unregistered_email">El correo no está registrado</string>
+    <string name="must_be_valid_email">Debes ingresar un correo válido. </string>
 
 </resources>

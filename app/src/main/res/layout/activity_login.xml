@@ -11,6 +11,8 @@
 
         <import type="android.view.View" />
 
+        <import type="android.graphics.Color" />
+
     </data>
 
 
@@ -26,22 +28,23 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/logo_content_description"
+            android:tint="@{viewModel.isLoading()?Color.GRAY:Color.BLACK}"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="@+id/left_guideline"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_shield"
-            />
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_shield" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
+            android:id="@+id/emailInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="@string/hint_email"
             android:enabled="@{viewModel.isLoading()?false:true}"
-            app:errorEnabled="true"
             app:layout_constraintEnd_toStartOf="@+id/right_guideline"
             app:layout_constraintStart_toStartOf="@id/left_guideline"
             app:layout_constraintTop_toTopOf="@+id/guideline"
@@ -49,7 +52,6 @@
             app:startIconDrawable="@drawable/ic_contact">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/logininput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
@@ -69,7 +71,7 @@
             android:enabled="@{viewModel.isLoading()?false:true}"
             android:text="@string/do_not_sign_out"
             app:layout_constraintStart_toStartOf="@id/left_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/emailInputLayout" />
 
         <Button
             android:id="@+id/button"
