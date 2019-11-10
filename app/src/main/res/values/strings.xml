@@ -9,6 +9,7 @@
 
     <!-- Buttons -->
     <string name="log_in">Iniciar Sesión</string>
+    <string name="validate">Validar</string>
 
     <!-- Content description -->
     <string name="logo_content_description">logo</string>
@@ -16,5 +17,8 @@
     <!-- Messages -->
     <string name="unregistered_email">El correo no está registrado</string>
     <string name="must_be_valid_email">Debes ingresar un correo válido. </string>
+
+    <!-- Titles -->
+    <string name="validar_pin">Validar PIN</string>
 
 </resources>

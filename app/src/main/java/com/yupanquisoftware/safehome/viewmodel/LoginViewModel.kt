@@ -33,9 +33,8 @@ class LoginViewModel : BaseViewModel(), TextView.OnEditorActionListener {
             if (loginEmail.get().equals("billykentac@gmail.com")) {
                 // Guardar sesion
 
-
-                //navAction.value =
-                //    if (rememberSession.get()) LoginEnum.FIRST_TIME else LoginEnum.NOT_FIRST_TIME
+                navAction.value =
+                    if (rememberSession.get()) LoginEnum.FIRST_TIME else LoginEnum.NOT_FIRST_TIME
 
 
             } else {
