@@ -5,6 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import java.util.logging.Logger
+
+fun Any.getLogger(): Logger = Logger.getLogger(this.javaClass.simpleName)
+
+fun String.isNumericString(): Boolean = this.matches("[0-9]+".toRegex())
 
 fun Context.showShortToast(
     context: Context = applicationContext,
@@ -29,3 +34,11 @@ fun <T> Activity.openActivityForResult(
     intent.putExtras(Bundle().apply(extras))
     startActivityForResult(intent, requestCode)
 }
+
+fun <T> Activity.openAndFinishActivity(it: Class<T>, extras: Bundle.() -> Unit = {}) {
+    val intent = Intent(this, it)
+    intent.putExtras(Bundle().apply(extras))
+    startActivity(intent)
+    finish()
+}
+

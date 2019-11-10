@@ -7,16 +7,34 @@ import android.widget.TextView
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.ViewModel
 
-class CodeViewModel : ViewModel(), TextView.OnEditorActionListener , TextWatcher {
+class CodeViewModel : ViewModel(), TextView.OnEditorActionListener, TextWatcher {
 
-    var total = 4
+    var ultimo = 3
     var index = 0
+
 
 
     val isValid = ObservableBoolean(false)
 
     // Evento de cambio en los 3 primeros digitos
     fun onEmailChanged(text: CharSequence, start: Int = 0, before: Int = 0, count: Int = 0) {
+
+        when (index) {
+            ultimo -> {
+
+            }
+            else -> {
+            }
+
+        }
+    }
+
+    fun validateCode() {
+        if (isValid.get()) {
+            // decir gaa
+        } else {
+            // decir agg
+        }
 
     }
 
