@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                     openActivity(IntroActivity::class.java, true)
                 }
                 LoginEnum.NOT_FIRST_TIME -> {
-                    openActivity(ValidateCode::class.java, true){
+                    openActivity(ValidateCodeActivity::class.java, true){
                         putString("message","Para iniciar sesión ingrese su PIN de seguridad.")
                     }
                 }

@@ -1,139 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.ValidateCode">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Para iniciar sesión ingrese su PIN de seguridad."
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-        app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-        app:layout_constraintStart_toStartOf="@+id/left_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    <data>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/validar_pin"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-        app:layout_constraintStart_toStartOf="@+id/left_guideline"
-        app:layout_constraintTop_toTopOf="parent" />
+        <variable
+            name="viewModel"
+            type="com.yupanquisoftware.safehome.viewmodel.CodeViewModel" />
+    </data>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="72dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ValidateCodeActivity">
 
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_weight="1"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="numberPassword"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="16dp"
+            android:text="Para iniciar sesión ingrese su PIN de seguridad."
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="numberPassword"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="32dp"
+            android:text="@string/validar_pin"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout2">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="72dp"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="numberPassword"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="24dp"
+            android:layout_weight="1"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout3">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="numberPassword|textVisiblePassword"
+                android:onTextChanged="@{viewModel.onTextChanged}"
+                android:selectAllOnFocus="true"
+                android:tag="0"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:onFocusChange="@{viewModel}" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="72dp"
             android:layout_height="wrap_content"
-            android:imeOptions="actionDone"
-            android:inputType="numberPassword"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_weight="1"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayout">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/validate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-        app:layout_constraintStart_toStartOf="@+id/left_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="1.0" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="numberPassword|textVisiblePassword"
+                android:onTextChanged="@{viewModel.onTextChanged}"
+                android:selectAllOnFocus="true"
+                android:tag="1"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:onFocusChange="@{viewModel}" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/left_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="32dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/textInputLayout4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayout2">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/right_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="32dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="numberPassword|textVisiblePassword"
+                android:onTextChanged="@{viewModel.onTextChanged}"
+                android:selectAllOnFocus="true"
+                android:tag="2"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:onFocusChange="@{viewModel}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayout3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="numberPassword|textVisiblePassword"
+                android:onTextChanged="@{viewModel.onTextChanged}"
+                android:selectAllOnFocus="true"
+                android:tag="3"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:onFocusChange="@{viewModel}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/validate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="32dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
