@@ -10,6 +10,7 @@
     <!-- Buttons -->
     <string name="log_in">Iniciar Sesión</string>
     <string name="validate">Validar</string>
+    <string name="delete">ELIMINAR</string>
 
     <!-- Content description -->
     <string name="logo_content_description">logo</string>
@@ -20,5 +21,5 @@
 
     <!-- Titles -->
     <string name="validar_pin">Validar PIN</string>
-
+    <string name="gestionar_habitantes">Gestionar habitantes</string>
 </resources>
