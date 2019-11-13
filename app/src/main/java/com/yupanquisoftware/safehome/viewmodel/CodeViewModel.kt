@@ -27,8 +27,13 @@ class CodeViewModel : ViewModel(), TextView.OnEditorActionListener, View.OnFocus
         if (hasFocus) {
             currentView = view as TextInputEditText
             index = Integer.parseInt(view.tag.toString())
+            if (currentView!!.text.toString().isBlank()) {
+                log.info("Campo vacio se puede retroceder flag")
+                flagDelete = false
+                //currentView?.setOnKeyListener(this)
+            }
         } else {
-            view.setOnKeyListener(null)
+            //view.setOnKeyListener(null)
             flagDelete = true
         }
     }
@@ -37,9 +42,11 @@ class CodeViewModel : ViewModel(), TextView.OnEditorActionListener, View.OnFocus
     fun onTextChanged(text: CharSequence, start: Int = 0, before: Int = 0, count: Int = 0) {
         log.info("texto:$text start:$start before:$before count:$count")
         if (text.isBlank()) {
-            currentView?.setOnKeyListener(this)
+            //currentView?.setOnKeyListener(this)
+            flagDelete = true
             return
         }
+        flagDelete = false
         when (index) {
             ultimo -> {
                 log.info("ultimo")
@@ -52,16 +59,21 @@ class CodeViewModel : ViewModel(), TextView.OnEditorActionListener, View.OnFocus
     }
 
     var flagDelete = true
-    override fun onKey(view: View?, p1: Int, keyEvent: KeyEvent): Boolean {
+    override fun onKey(view: View, p1: Int, keyEvent: KeyEvent): Boolean {
+        log.info("-----------------------------------------------")
         if (keyEvent.keyCode == KeyEvent.KEYCODE_DEL) {
-            log.info("uy")
             if (flagDelete) {
+                log.info("El flag se alterno")
                 flagDelete = false
             } else {
+                log.info("Se navega hacia atras")
                 currentView?.focusSearch(View.FOCUS_LEFT)?.requestFocus()
             }
-            return true
+            return false
+        }else{
+            currentView?.selectAll()
         }
+
         return false
     }
 
